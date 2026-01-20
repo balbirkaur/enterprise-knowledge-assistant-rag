@@ -1,0 +1,37 @@
+[
+  {
+    "id": "Q1",
+    "query": "How many annual paid leaves are full-time employees entitled to per year?",
+    "expected_document": "HR_Leave_Policy.pdf",
+    "expected_section": "2.1 Annual Leave (Vacation)",
+    "notes": "Answer should retrieve annual leave entitlement (20 days), not casual or sick leave"
+  },
+  {
+    "id": "Q2",
+    "query": "What are the consequences of repeated late arrival at work?",
+    "expected_document": "HR_Attendance_Policy.pdf",
+    "expected_section": "4.2 Consequences",
+    "notes": "Should retrieve escalation steps: verbal warning, written warning, suspension, termination"
+  },
+  {
+    "id": "Q3",
+    "query": "Who must approve reimbursement claims above 50,000?",
+    "expected_document": "Finance_Reimbursement_Policy.pdf",
+    "expected_section": "6.1 Approval Authority",
+    "notes": "Correct approver is CFO or VP Finance"
+  },
+  {
+    "id": "Q4",
+    "query": "What security controls are required for user access to IT systems?",
+    "expected_document": "IT_Security_Policy-1.pdf",
+    "expected_section": "4.1 User Access Controls",
+    "notes": "Includes MFA, strong passwords, unique user IDs"
+  },
+  {
+    "id": "Q5",
+    "query": "What is the standard process for deploying a new service to production?",
+    "expected_document": "Engineering_SOP.pdf",
+    "expected_section": "2.5 Deployment Process",
+    "notes": "Should retrieve production deployment window, approvals, rollback plan"
+  }
+]

@@ -1,65 +1,102 @@
-
 # Enterprise Knowledge Assistant (Advanced RAG)
 
 ## Overview
-This is a self-initiated portfolio project focused on building an end-to-end Enterprise Knowledge Assistant using Retrieval Augmented Generation (RAG) techniques.
 
-The project starts from basic RAG fundamentals and progressively evolves into an advanced, production-style RAG system, all within a single codebase.
+The **Enterprise Knowledge Assistant** is a production-oriented Advanced Retrieval-Augmented Generation (RAG) system designed to provide accurate, verifiable, and auditable answers over enterprise knowledge sources such as policies, SOPs, internal documentation, and compliance records.
 
-## Motivation
-Modern enterprises store critical information across numerous internal documents such as HR policies, compliance guidelines, and IT security manuals. Traditional search systems often fail to provide accurate, context-aware answers.
+Unlike basic RAG implementations, this system focuses on precision, trust, and governance, which are mandatory requirements for enterprise AI adoption.
 
-## Use Case
-An AI-powered assistant that allows users to ask natural language questions over internal enterprise documents and receive grounded, source-backed responses.
+## Key Objectives
 
-## Architecture
-1. Document ingestion (PDFs)
-2. Text chunking with overlap
-3. Metadata enrichment
-4. Embedding generation
-5. Vector database storage
-6. Hybrid retrieval (Vector + Keyword)
-7. Query expansion
-8. Re-ranking
-9. Context compression
-10. Answer generation
-11. Evaluation & monitoring
+- Replace fragmented internal search across PDFs and documents
+- Prevent hallucinations in sensitive domains (HR, Legal, Finance)
+- Provide source-grounded, explainable answers
+- Enable evaluation, monitoring, and continuous improvement
+- Be deployable in real enterprise environments
+
+## High-Level Architecture
+
+User Query  
+→ Query Understanding & Expansion  
+→ Hybrid Retrieval (Dense + BM25 + Metadata)  
+→ Re-ranking  
+→ Context Compression  
+→ LLM Answer Generation  
+→ Citations & Confidence  
+→ Evaluation & Audit Logging
+
+## Core Features
+
+### Advanced Document Ingestion
+
+- PDF ingestion
+- Intelligent chunking with overlap
+- Metadata enrichment (source, version, department, timestamp)
+
+### Hybrid Retrieval
+
+- Dense vector search
+- Keyword search (BM25)
+- Metadata filtering
+- Rank fusion
+
+### Re-ranking
+
+- Cross-encoder reranking
+- Improves answer precision and faithfulness
+
+### Context Compression
+
+- Removes redundant context
+- Optimizes token usage
+
+### Grounded Answer Generation
+
+- Answers generated only from retrieved context
+- Mandatory citations
+- Confidence-based refusal mechanism
+
+### Evaluation & Monitoring
+
+- Recall@K
+- Faithfulness score
+- Hallucination rate
+- Latency & cost tracking
 
 ## Tech Stack
+
 - Python
 - LangChain
 - FAISS / Chroma
-- OpenAI / Azure OpenAI
-- SentenceTransformers
 - BM25
+- SentenceTransformers
+- OpenAI / Azure OpenAI
 - RAGAS
 - Streamlit
 
-## Dataset
-Enterprise-style PDF documents including HR policies, banking guidelines, IT security documents, and compliance policies.
+## Enterprise Differentiators
 
-## RAG Progression
-### Basic RAG
-- PDF ingestion
-- Chunking & embeddings
-- Vector similarity search
+- Hybrid retrieval
+- Re-ranking layer
+- Evaluation-driven design
+- Audit-ready architecture
+- Modular and extensible pipeline
 
-### Intermediate RAG
-- Metadata filtering
-- Hybrid search
-- Query expansion
+## Use Cases
 
-### Advanced RAG
-- Re-ranking
-- Context compression
-- Hallucination control
-- Evaluation metrics
+- HR Policy Assistant
+- Legal Compliance Q&A
+- Engineering SOP Search
+- Internal Knowledge Copilot
 
-## Evaluation
-RAG-specific metrics are used to measure answer relevance and faithfulness.
+## Future Enhancements
 
-## UI
-Streamlit-based chat interface for interactive Q&A.
+- RBAC & authentication
+- Multi-agent RAG
+- Knowledge graph integration
+- Docker & Kubernetes deployment
 
-## Resume Highlight
-Built a self-driven enterprise-grade RAG system demonstrating advanced retrieval and evaluation techniques.
+## Author
+
+Balbir Kaur  
+Enterprise AI | Advanced RAG | Knowledge Systems
